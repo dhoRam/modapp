@@ -71,10 +71,19 @@
     background-color: transparent;
     font-weight: 400;
     text-decoration: none;
-
 }
 .priv-link-wrapper{
-    margin: 0 0 16px;
+    margin-top: 24px;
     font-size: 10px;
     text-align: center;
+}
+.loginbox-footer {
+    display: block;
+    padding: 0 0 24px;
+    text-align: center;
+}
+.sign-link{
+    font-weight: 700;
+    background-color: transparent;
+    text-decoration: none;
 }
