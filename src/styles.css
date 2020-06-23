@@ -6,6 +6,9 @@
      .banner{
         width: 400px;
     }
+    .signup-btn , .login-btn{
+        width: 100% !important;
+     }
 }
 @media only screen and (min-width: 600px) {
     /* .container-fluid {
@@ -44,4 +47,34 @@
 .not-badge {
     top: -8px !important;
 }
+.card-list{
+    margin: 15px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    transition: 0.3s all linear;
+}
+.card-list:hover{
+    transform: scale(1.04,1.06);
+}
+.banner-img{
+    /* background-image: url(https://image.freepik.com/free-photo/back-school-education-banner-background_8087-1192.jpg);
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 100%; */
+}
+.required{
+    color: red !important;
+}
 
+.pri-link{
+    color: #007791;
+    background-color: transparent;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+.priv-link-wrapper{
+    margin: 0 0 16px;
+    font-size: 10px;
+    text-align: center;
+}
