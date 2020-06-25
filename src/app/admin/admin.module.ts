@@ -15,6 +15,7 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {DropdownModule} from 'primeng/dropdown';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
@@ -26,7 +27,7 @@ import {DropdownModule} from 'primeng/dropdown';
     ManageDomainsComponent, 
     TechnologyComponent, 
     ManagePaymentsComponent, 
-    AppSettingsComponent, AdminMenuComponent],
+    AppSettingsComponent, AdminMenuComponent, AdminDashboardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
