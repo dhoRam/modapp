@@ -7,7 +7,7 @@
             [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [filterDelay]="0" [globalFilterFields]="['technology','technology.technology','technology.status','status']">
         <ng-template pTemplate="caption">
-            <h4> <strong> MANAGE TECHMOLOGIES</strong>  </h4>
+            <h4> <strong> MANAGE TECHNOLOGIES</strong>  </h4>
             <div class="ui-table-globalfilter-container">
                 <input  pInputText class="form-control" type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"  placeholder="Search technology" />
             </div>
