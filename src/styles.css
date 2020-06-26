@@ -9,17 +9,25 @@
     .signup-btn , .login-btn{
         width: 100% !important;
      }
+     .user-icon{
+        display:none;
+    }
+    .menu_btn{
+        margin-left: auto !important;
+        font-weight: 500;
+        display:inline-block !important;
+        cursor: pointer;
+    }
+
 }
 @media only screen and (min-width: 600px) {
-    /* .container-fluid {
-        max-width: 80%;
-        padding: 0px;
-     }
-     .navbar{
-        width: 80%;
-        margin-left: 10%
-     } */
-
+     .user-icon{
+        cursor: pointer;
+        display:inline-block;
+    }
+    .menu_btn{
+        display:none;
+    }
 }
 .container-fluid {
     margin-top: 100px !important;
@@ -87,4 +95,9 @@
     font-weight: 700;
     background-color: transparent;
     text-decoration: none;
+}
+.user-avatar{
+    border-radius: 50%;
+    width:40px;
+    border: 1px solid #e33c17;
 }
