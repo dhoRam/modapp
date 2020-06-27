@@ -101,3 +101,10 @@
     width:40px;
     border: 1px solid #e33c17;
 }
+.line-hr{
+    background-color: #f93308;
+    list-style: none;
+}
+.name-label{
+    font-size: 14px;
+}

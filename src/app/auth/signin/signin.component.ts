@@ -14,7 +14,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
   onLogin() {
-    console.log(this.email)
+    console.log(this.email);
     this.authService.loginUser(this.email);
     this.authService.userType = this.email;
     this.route.navigate([this.email]);
