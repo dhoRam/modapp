@@ -31,14 +31,26 @@
         <a class="btn btn-outline-info login-btn not-badge-btn ">Completed Trainings</a>
       </li>
       <li class="nav-item" *ngIf="isLoggedIn" style="margin: auto;">
+        <div class="dropdown">
+          <a class="btn btn-outline-info login-btn not-badge-btn dropbtn"><i class="fas fa-shopping-bag"
+              style="font-size: 20px;"></i></a>
+          <div class="dropdown-content">
+            <a href="#" class="text-center"><strong>Your card is empty.</strong></a>
+            <a href="#"></a>
+            <a href="#" style="text-align: center;"><span class="btn btn-outline-info"
+                style="background-color: #17a2b8;color: #fff;">Keep shopping</span></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn" style="margin: auto;">
         <div class="dropdown" style="float:left;">
           <a class="btn btn-outline-info login-btn not-badge-btn dropbtn"><i class="far fa-bell"
               style="font-size: 20px;"></i><span class="badge badge-pill badge-danger not-badge"
               style="font-size: 10px;">9</span></a>
           <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#" class="pull-left"><strong>Notifications</strong></a>
+            <a href="#"></a>
+            <a href="#" style="text-align: center;">No notifications.</a>
           </div>
         </div>
       </li>
@@ -57,8 +69,8 @@
             <a href="#" class="div">
               <img class="user-avatar" style="width: 80px;"
                 src="https://scontent.fbom26-1.fna.fbcdn.net/v/t1.0-1/c0.8.240.240a/p240x240/72726566_2433032706793550_7724302762627825664_o.jpg?_nc_cat=104&_nc_sid=dbb9e7&_nc_ohc=xNSPwgN26IwAX9BU4jP&_nc_ht=scontent.fbom26-1.fna&oh=0c4c7e0ec44b204c2e88bb636d951798&oe=5F1A2F0F">
-              <span class="inline-block bold" style="text-align: center; margin: auto;">
-                dsjadhav92@gmail.com
+              <span class="inline-block" style="text-align: center; margin: auto;">
+                <strong> dsjadhav92@gmail.com</strong>
               </span>
             </a>
             <hr class="line-hr">
