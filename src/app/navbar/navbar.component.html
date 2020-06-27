@@ -14,7 +14,7 @@
     <ul class="list-group mt-3">
       <li class="list-group-item">
         <div style="text-align: center;">
-          <a href="#">
+          <a [routerLink]="['mentor/profile']">
             <img class="user-avatar" style="width: 80px; text-align: center;  margin: auto;"
               src="https://scontent.fbom26-1.fna.fbcdn.net/v/t1.0-1/c0.8.240.240a/p240x240/72726566_2433032706793550_7724302762627825664_o.jpg?_nc_cat=104&_nc_sid=dbb9e7&_nc_ohc=xNSPwgN26IwAX9BU4jP&_nc_ht=scontent.fbom26-1.fna&oh=0c4c7e0ec44b204c2e88bb636d951798&oe=5F1A2F0F">
           </a>
@@ -23,19 +23,19 @@
           <strong> dsjadhav92@gmail.com</strong>
         </div>
       </li>
-      <li class="list-group-item"> <a href="#">My trainings</a></li>
-      <li class="list-group-item"> <a href="#">My cart</a>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">My trainings</a></li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">My cart</a>
       </li>
-      <li class="list-group-item"> <a href="#">Notifications</a></li>
-      <li class="list-group-item"> <a href="#">Account settings</a></li>
-      <li class="list-group-item"> <a href="#">Payment methods</a></li>
-      <li class="list-group-item"><a href="#">Purchase history</a>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Notifications</a></li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Account settings</a></li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Payment methods</a></li>
+      <li class="list-group-item"><a [routerLink]="['mentor/profile']">Purchase history</a>
       </li>
-      <li class="list-group-item"> <a href="#">Edit profile</a> </li>
-      <li class="list-group-item"> <a href="#">Public profile</a>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Edit profile</a> </li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Public profile</a>
       </li>
-      <li class="list-group-item"> <a href="#">Help</a></li>
-      <li class="list-group-item"> <a href="#">Logout</a></li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Help</a></li>
+      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Logout</a></li>
     </ul>
   </p-sidebar>
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -51,9 +51,9 @@
           <a class="btn btn-outline-info login-btn not-badge-btn dropbtn"><i class="fas fa-shopping-bag"
               style="font-size: 20px;"></i></a>
           <div class="dropdown-content">
-            <a href="#" class="text-center"><strong>Your card is empty.</strong></a>
-            <a href="#"></a>
-            <a href="#" style="text-align: center;"><span class="btn btn-outline-info"
+            <a [routerLink]="['mentor/profile']" class="text-center"><strong>Your card is empty.</strong></a>
+            <a [routerLink]="['mentor/profile']"></a>
+            <a [routerLink]="['mentor/profile']" style="text-align: center;"><span class="btn btn-outline-info"
                 style="background-color: #17a2b8;color: #fff;">Keep shopping</span></a>
           </div>
         </div>
@@ -64,9 +64,9 @@
               style="font-size: 20px;"></i><span class="badge badge-pill badge-danger not-badge"
               style="font-size: 10px;">9</span></a>
           <div class="dropdown-content">
-            <a href="#" class="pull-left"><strong>Notifications</strong></a>
-            <a href="#"></a>
-            <a href="#" style="text-align: center;">No notifications.</a>
+            <a [routerLink]="['mentor/profile']" class="pull-left"><strong>Notifications</strong></a>
+            <a [routerLink]="['mentor/profile']"></a>
+            <a [routerLink]="['mentor/profile']" style="text-align: center;">No notifications.</a>
           </div>
         </div>
       </li>
@@ -83,7 +83,7 @@
           </button>
           <div class="dropdown-content">
             <div style="text-align: center;">
-              <a href="#">
+              <a [routerLink]="['mentor/profile']">
                 <img class="user-avatar" style="width: 80px; text-align: center;  margin: auto;"
                   src="https://scontent.fbom26-1.fna.fbcdn.net/v/t1.0-1/c0.8.240.240a/p240x240/72726566_2433032706793550_7724302762627825664_o.jpg?_nc_cat=104&_nc_sid=dbb9e7&_nc_ohc=xNSPwgN26IwAX9BU4jP&_nc_ht=scontent.fbom26-1.fna&oh=0c4c7e0ec44b204c2e88bb636d951798&oe=5F1A2F0F">
               </a>
@@ -92,19 +92,19 @@
               <strong> dsjadhav92@gmail.com</strong>
             </div>
             <hr class="line-hr">
-            <a href="#">My trainings</a>
-            <a href="#">My cart</a>
+            <a [routerLink]="['mentor/trainings']">My trainings</a>
+            <a [routerLink]="['mentor/cart']">My cart</a>
             <hr class="line-hr">
-            <a href="#">Notifications</a>
-            <a href="#">Account settings</a>
-            <a href="#">Payment methods</a>
-            <a href="#">Purchase history</a>
+            <a [routerLink]="['mentor/notifications']">Notifications</a>
+            <a [routerLink]="['mentor/account-settings']">Account settings</a>
+            <a [routerLink]="['mentor/payment-methods']">Payment methods</a>
+            <a [routerLink]="['mentor/purchase-history']">Purchase history</a>
             <hr class="line-hr">
-            <a href="#">Edit profile</a>
-            <a href="#">Public profile</a>
+            <a [routerLink]="['mentor/edit-profile']">Edit profile</a>
+            <a [routerLink]="['{email}/public-profile']">Public profile</a>
             <hr class="line-hr">
-            <a href="#">Help</a>
-            <a href="#">Logout</a>
+            <a [routerLink]="['mentor/help']">Help</a>
+            <a (click)="doLogout()">Logout</a>
           </div>
         </div>
       </li>

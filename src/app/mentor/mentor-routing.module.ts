@@ -6,12 +6,13 @@ import { MentorProfileComponent } from './mentor-profile/mentor-profile.componen
 import { MentorDashboardComponent } from './mentor-dashboard/mentor-dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: MentorComponent,
-      // canActivate: [AuthGuard],
-  children: [
-    { path: 'dashboard', component: MentorDashboardComponent ,pathMatch:'full' },
-    { path: 'profile', component: MentorProfileComponent ,pathMatch:'full'}
-  ]
+  {
+    path: '', component: MentorComponent,
+    // canActivate: [AuthGuard],
+    children: [
+      { path: 'dashboard', component: MentorDashboardComponent, pathMatch: 'full' },
+      { path: 'public-profile', component: MentorProfileComponent, pathMatch: 'full' }
+    ]
   },
 ];
 
