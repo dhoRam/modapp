@@ -8,21 +8,21 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  display:boolean;
+  display: boolean;
   authStatSubs: Subscription;
-  isLoggedIn :boolean;
-  constructor(private authService: AuthService) { 
+  isLoggedIn: boolean;
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
     this.authStatSubs = this.authService
-    .getAuthStatusListener()
-    .subscribe(isAuthenticated => {
-      this.isLoggedIn= isAuthenticated;
-    });
-    console.log(this.isLoggedIn)
-    this.isLoggedIn = true;
-    this.authService.userType = 'mentor';
+      .getAuthStatusListener()
+      .subscribe(isAuthenticated => {
+        this.isLoggedIn = isAuthenticated;
+      });
+    console.log(this.isLoggedIn);
+    // this.isLoggedIn = true;
+    // this.authService.userType = 'mentor';
   }
   doLogout() {
     this.authService.logout();

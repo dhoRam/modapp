@@ -8,16 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  email : any ='';
-  constructor(private authService: AuthService,private route: Router) { }
+  email: any = '';
+  constructor(private authService: AuthService, private route: Router) { }
 
   ngOnInit(): void {
   }
-  onLogin(){
+  onLogin() {
     console.log(this.email)
     this.authService.loginUser(this.email);
     this.authService.userType = this.email;
-    this.route.navigate([ this.email ]);
+    this.route.navigate([this.email]);
   }
 
 }
