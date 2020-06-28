@@ -10,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { TermsComponent } from './terms/terms.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import {SidebarModule} from 'primeng/sidebar';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 @NgModule({
