@@ -32,10 +32,10 @@
       <li class="list-group-item"><a [routerLink]="['mentor/profile']">Purchase history</a>
       </li>
       <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Edit profile</a> </li>
-      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Public profile</a>
+      <li class="list-group-item"> <a [routerLink]="['mentor/public-profile']">Public profile</a>
       </li>
       <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Help</a></li>
-      <li class="list-group-item"> <a [routerLink]="['mentor/profile']">Logout</a></li>
+      <li class="list-group-item"> <a (click)="doLogout()">Logout</a></li>
     </ul>
   </p-sidebar>
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">

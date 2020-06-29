@@ -11,7 +11,7 @@ export class MentorComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    this.route.navigate(['mentor/dashboard'])
+    this.route.navigate(['mentor/dashboard']);
   }
 
 }
