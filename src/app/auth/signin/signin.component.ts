@@ -1,23 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
-
+import {
+  Component, OnInit, EventEmitter, Output
+} from '@angular/core';
+import {
+  FormGroup,
+  Validators,
+  FormBuilder
+} from "@angular/forms";
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  email: any = '';
-  constructor(private authService: AuthService, private route: Router) { }
+  @Output() loggedIn = new EventEmitter<User>();
+  form: FormGroup;
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit(): void {
-  }
-  onLogin() {
-    console.log(this.email);
-    this.authService.loginUser(this.email);
-    this.authService.userType = this.email;
-    this.route.navigate([this.email]);
+    this.form = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.pattern("[^ @]*@[^ @]*")]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8)]],
+    });
   }
 
+  login() {
+    console.log(`Login ${this.form.value}`);
+    if (this.form.valid) {
+      this.loggedIn.emit(
+        new User(
+          this.form.value.email,
+          this.form.value.password
+        )
+      );
+      console.log(this.form.value.email);
+      // this.authService.loginUser(this.form.value.email);
+      // this.authService.userType = this.form.value.email;
+      // this.route.navigate([this.form.value.email]);
+    } else {
+      alert('error !');
+    }
+  }
+
+}
+export class User {
+  constructor(public email: string, public password: string) {
+
+  }
 }
