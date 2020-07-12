@@ -6,6 +6,8 @@ import {
   Validators,
   FormBuilder
 } from "@angular/forms";
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -14,7 +16,7 @@ import {
 export class SigninComponent implements OnInit {
   @Output() loggedIn = new EventEmitter<User>();
   form: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private route: Router) {
 
   }
 
@@ -32,16 +34,19 @@ export class SigninComponent implements OnInit {
   login() {
     console.log(`Login ${this.form.value}`);
     if (this.form.valid) {
-      this.loggedIn.emit(
-        new User(
-          this.form.value.email,
-          this.form.value.password
-        )
+      const reqBody = new User(
+        this.form.value.email,
+        this.form.value.password
       );
-      console.log(this.form.value.email);
-      // this.authService.loginUser(this.form.value.email);
-      // this.authService.userType = this.form.value.email;
-      // this.route.navigate([this.form.value.email]);
+      this.authService.loginUser(reqBody).subscribe(
+        response => {
+
+          this.route.navigate(['/admin']);
+
+        },
+        error => {
+        }
+      );
     } else {
       alert('error !');
     }
@@ -49,7 +54,7 @@ export class SigninComponent implements OnInit {
 
 }
 export class User {
-  constructor(public email: string, public password: string) {
+  constructor(public username: string, public password: string) {
 
   }
 }
