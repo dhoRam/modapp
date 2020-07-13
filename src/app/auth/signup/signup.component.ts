@@ -39,8 +39,12 @@ export class SignupComponent implements OnInit {
         // this.route.navigate(['/auth/login']);
       }, error => {
         console.log('error', error);
+        let msg = 'Oops !! Something went wrong, please contact the administrator';
+        if (error.error.message) {
+          msg = error.error.message;
+        }
         this.msgStatus.status = true;
-        this.msgStatus.message = error.error.message ? error.error.message : 'Oops !! Something went wrong, please contact the administrator';
+        this.msgStatus.message = msg;
         this.msgStatus.type = false;
       });
 
