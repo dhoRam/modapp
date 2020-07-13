@@ -18,6 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService, private loaderService: LoaderService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    this.showLoader();
     let authToken = this.authService.getToken();
     if (!authToken) {
       authToken = '';

@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   form: FormGroup;
+  msgStatus = { status: false, type: true, message: '' };
   constructor(private fb: FormBuilder, private authService: AuthService, private route: Router) { }
 
   ngOnInit(): void {
@@ -32,14 +33,25 @@ export class SignupComponent implements OnInit {
         this.form.value.password
       );
       this.authService.createUser(reqBody).subscribe(res => {
-        alert('Success !');
-        this.route.navigate(['/auth/login']);
+        this.msgStatus.status = true;
+        this.msgStatus.message = 'Sign Up Successful !';
+        this.msgStatus.type = true;
+        // this.route.navigate(['/auth/login']);
       }, error => {
-        console.log('error!');
+        console.log('error', error);
+        this.msgStatus.status = true;
+        this.msgStatus.message = error.error.message ? error.error.message : 'Oops !! Something went wrong, please contact the administrator';
+        this.msgStatus.type = false;
       });
+
     } else {
-      alert('error !');
+      this.msgStatus.status = true;
+      this.msgStatus.message = 'Oops !! Something went wrong, please contact the administrator';
+      this.msgStatus.type = false;
     }
+    setTimeout(() => {
+      this.msgStatus.status = false;
+    }, 5000);
   }
 }
 export class User {

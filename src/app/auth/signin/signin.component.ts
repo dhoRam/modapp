@@ -14,8 +14,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  @Output() loggedIn = new EventEmitter<User>();
   form: FormGroup;
+  msgStatus = { status: false, type: true, message: '' };
   constructor(private fb: FormBuilder, private authService: AuthService, private route: Router) {
 
   }
@@ -40,16 +40,26 @@ export class SigninComponent implements OnInit {
       );
       this.authService.loginUser(reqBody).subscribe(
         response => {
-
+          this.msgStatus.status = true;
+          this.msgStatus.message = 'Login Successful !';
+          this.msgStatus.type = true;
           this.route.navigate(['/admin']);
-
         },
         error => {
+          console.log('error', error);
+          this.msgStatus.status = true;
+          this.msgStatus.message = error.error.message ? error.error.message : 'Oops !! Something went wrong, please contact the administrator';
+          this.msgStatus.type = false;
         }
       );
     } else {
-      alert('error !');
+      this.msgStatus.status = true;
+      this.msgStatus.message = 'Oops !! Something went wrong, please contact the administrator';
+      this.msgStatus.type = false;
     }
+    setTimeout(() => {
+      this.msgStatus.status = false;
+    }, 5000);
   }
 
 }

@@ -22,6 +22,8 @@ export class AuthService {
   }
 
   logout() {
+    this.token = null;
+    localStorage.removeItem('token');
     this.authStatusListener.next(false);
     this.route.navigate(['/']);
   }
@@ -75,5 +77,14 @@ export class AuthService {
   private saveAuthData(token: string, expirationDate: Date) {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
+  }
+  getIsAuth() {
+    let loggedIn: boolean;
+    if (localStorage.getItem('token')) {
+      loggedIn = true;
+    } else {
+      loggedIn = false;
+    }
+    return loggedIn;
   }
 }
