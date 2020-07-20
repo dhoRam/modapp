@@ -48,8 +48,8 @@ export class SigninComponent implements OnInit {
         error => {
           console.log('error', error);
           let msg = 'Oops !! Something went wrong, please contact the administrator';
-          if (error.error.message) {
-            msg = error.error.message;
+          if (error.error.error) {
+            msg = error.error.error;
           }
           this.msgStatus.status = true;
           this.msgStatus.message = msg;

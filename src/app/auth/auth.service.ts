@@ -53,7 +53,7 @@ export class AuthService {
           const token = response.token;
           this.token = token;
           if (token) {
-            localStorage.setItem('token', JSON.stringify(response.token));
+            localStorage.setItem('token', JSON.parse(JSON.stringify(response.token)));
             // const expiresInDuration = response.data.expiresIn;
             // this.setAuthTimer(expiresInDuration);
             this.authStatusListener.next(true);
